@@ -1,3 +1,10 @@
+//analog sensors
+#define LIGHT 0
+
+
+// servo ports
+#define ELECTRIC 0
+ 
 main() {
 printf("Hello World.\n");
   create_connect();

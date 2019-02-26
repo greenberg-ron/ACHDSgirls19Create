@@ -29,10 +29,16 @@ int forwardtobump(){
     create_drive_direct(speed,speed);
     while (get_create_lbump()==0 && get_create_rbump()==0){msleep(25);}
     create_stop(); gobackward(1); return 0;}
-// stringer down is 1830 and up is 800
+	// stringer down is 1830 and up is 800
+int stringerup() {set_servo_position(ELECTRIC,800); return 0;}
+int stringerdown() {set_servo_position(ELECTRIC,1830); return 0;}
+int grabberup(){} // This procedure and the next two need to be filled in
+int grabbermiddle(){}
+int grabberdown(){}
 int main() {
   	printf("Hello World.\n");
   	create_connect();
+    enable_servos();
   	printf("Create connected.\n");
   	// wait_for_light(0);
   	// shut_down_in(119.5); /*seconds*/
@@ -41,5 +47,11 @@ int main() {
   	forwardtobump();
     turnright();
     gobackward(15);
+    stringerup();
+    goforward(25);
+    stringerdown();
+    gobackward(40);
+    stringerup();
+    gobackward(25);
   	create_disconnect();
   	return 0;}

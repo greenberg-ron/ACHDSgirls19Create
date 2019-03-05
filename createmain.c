@@ -31,7 +31,7 @@ int forwardtobump(){
     while (get_create_lbump()==0 && get_create_rbump()==0){msleep(25);}
     create_stop(); gobackward(1); return 0;}
 	// stringer down is 1830 and up is 800
-int stringerup() {set_servo_position(ELECTRIC,800); return 0;}
+int stringerup() {set_servo_position(ELECTRIC,450); return 0;}
 int stringerdown() {set_servo_position(ELECTRIC,1830); return 0;}
 int grabberup(){set_servo_position(GRABBER,112); return 0;} // This procedure and the next two need to be filled in     
 int grabbermiddle(){set_servo_position(GRABBER,1160); return 0;}//  112 is up, 1160is middle, anddownis 1500
@@ -49,13 +49,18 @@ int main() {
   	turnleft();
   	forwardtobump();
     turnright();
-    gobackward(15);
+    speed=50;
+    gobackward(7);
     stringerup();
-    goforward(30);
+    goforward(25);
     stringerdown();
     gobackward(40);
     stringerup();
-    gobackward(25);
+    
+    gobackward(20);
     stringerdown();
+   
+    speed=100;
+    turnright();
   	create_disconnect();
   	return 0;}

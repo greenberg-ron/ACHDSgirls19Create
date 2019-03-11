@@ -2,10 +2,10 @@
 
 //analog sensors
 #define LIGHT 0
-#define GRABBER 2
 // servo ports
 #define ELECTRIC 0
-int speed=100;// max is 500
+#define GRABBER 2
+speed=100;// max is 500
 int turnleft(){
     set_create_total_angle(0);
   	create_drive_direct (-speed,speed); // left@0, right@speed
